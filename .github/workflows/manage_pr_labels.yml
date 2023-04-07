@@ -126,7 +126,8 @@ jobs:
 
       - uses: yogevbd/enforce-label-action@2.2.2
         with:
-          REQUIRED_LABELS_ANY: "major,minor,patch,hotfix,non-functional,bug"
+          # yamllint disable-line rule:line-length
+          REQUIRED_LABELS_ANY: "major,minor,patch,hotfix,non-functional,bug,dependencies"
           REQUIRED_LABELS_ANY_DESCRIPTION: "Include a SemVer or `non-functional` label"
 
   edit-keep-updated-label:
