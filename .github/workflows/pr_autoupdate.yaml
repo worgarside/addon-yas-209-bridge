@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: docker://chinthakagodawita/autoupdate-action:v1
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_FILTER: labelled
           PR_LABELS: "keep-updated"
           MERGE_CONFLICT_ACTION: "ignore"
