@@ -124,7 +124,7 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo -e "\`\`\`json\n$GITHUB_CONTEXT\n\`\`\`" >> $GITHUB_STEP_SUMMARY
 
-      - uses: yogevbd/enforce-label-action@2.1.0
+      - uses: yogevbd/enforce-label-action@2.2.2
         with:
           REQUIRED_LABELS_ANY: "major,minor,patch,hotfix,non-functional,bug"
           REQUIRED_LABELS_ANY_DESCRIPTION: "Include a SemVer or `non-functional` label"
