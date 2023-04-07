@@ -11,6 +11,11 @@ labels:
     files:
       - ^poetry\.lock$
       - ^Pipfile\.lock$
+    authors:
+      - dependabot
+      - dependabot[bot]
+      - pre-commit-ci
+      - pre-commit-ci[bot]
 
   - label: enhancement
     branch: ^feature\/
