@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "addon-yas-209-bridge"
+version = "0.1.0"
+description = "Home Assistant addon to act as a reporting bridge for the Yamaha YAS-209 soundbar"
+authors = ["Will Garside <worgarside@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "addon_yas_209_bridge" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+wg-utilities = "^3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
