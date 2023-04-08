@@ -19,6 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release-tag: ${{ steps.get-tag.outputs.release-tag }}
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - name: Get Release Tag
         id: get-tag
