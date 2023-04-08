@@ -109,8 +109,8 @@ jobs:
           echo "Release label is \`${{ steps.derive-label.outputs.release-label }}\`" >> $GITHUB_STEP_SUMMARY
         # yamllint enable rule:line-length
 
-  enforce-semver-label:
-    name: Enforce SemVer Label
+  validate-semver-label:
+    name: Validate SemVer Label
     runs-on: ubuntu-latest
     needs: set_labels
     if: |
@@ -119,12 +119,8 @@ jobs:
         !startsWith(github.head_ref, 'release/')
       )
     steps:
-      - name: Log GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo -e "\`\`\`json\n$GITHUB_CONTEXT\n\`\`\`" >> $GITHUB_STEP_SUMMARY
-
-      - uses: yogevbd/enforce-label-action@2.2.2
+      - name: Validate SemVer Label
+        uses: yogevbd/enforce-label-action@2.2.2
         with:
           # yamllint disable-line rule:line-length
           REQUIRED_LABELS_ANY: "major,minor,patch,hotfix,non-functional,bug,dependencies"
