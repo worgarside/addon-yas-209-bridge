@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "addon-yas-209-bridge"
-version = "0.1.2"
+version = "1.0.0"
 description = "Home Assistant addon to act as a reporting bridge for the Yamaha YAS-209 soundbar"
 authors = ["Will Garside <worgarside@gmail.com>"]
 license = "MIT"
