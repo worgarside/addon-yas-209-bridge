@@ -12,7 +12,8 @@
       "console": "integratedTerminal",
       "env": {
         "PYTHONPATH": "${workspaceFolder}"
-      }
+      },
+      "envFile": "${workspaceFolder}/addon_yas_209_bridge/.env"
     },
     {
       "name": "Debug Tests",

@@ -1,0 +1,10 @@
+# pip doesn't like the `wg-utilities[devices.yamaha_yas_209]` extra so the
+# subdependencies are listed explicitly too
+
+async-upnp-client
+lxml
+paramiko
+pydantic
+pytz
+wg-utilities[exceptions,devices-yamaha_yas_209]==3.0.1
+xmltodict
