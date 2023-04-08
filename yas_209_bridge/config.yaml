@@ -18,7 +18,7 @@ options:
   yas_209_ip: 192.168.1.Y
   sftp_hostname: homeassistant.local
   sftp_username: root
-  sftp_key_filepath: .ssh/id_rsa
+  sftp_private_key_string: <Paste your key here>
 schema:
   listen_ip: str
   listen_port: int
@@ -26,6 +26,6 @@ schema:
   yas_209_ip: str
   sftp_hostname: str
   sftp_username: str
-  sftp_key_filepath: str
+  sftp_private_key_string: str
 ports:
   50420/tcp: 50420

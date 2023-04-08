@@ -2,13 +2,13 @@
 from __future__ import annotations
 
 from datetime import datetime
-from io import BytesIO
+from io import BytesIO, StringIO
 from json import dumps
 from logging import DEBUG, getLogger
 from os import environ, getenv
 from typing import Any, TypedDict
 
-from paramiko import AutoAddPolicy, SFTPClient, SSHClient
+from paramiko import AutoAddPolicy, RSAKey, SFTPClient, SSHClient
 from requests import post
 from wg_utilities.devices.yamaha_yas_209 import YamahaYas209
 from wg_utilities.devices.yamaha_yas_209.yamaha_yas_209 import CurrentTrack
@@ -36,7 +36,13 @@ TIMESTAMP_FORMAT = "%Y-%m-%d %H:%M:%S.%f"
 
 SFTP_HOSTNAME = getenv("SFTP_HOSTNAME", "null")  # Default to satisfy mypy
 SFTP_USERNAME = getenv("SFTP_USERNAME")
-SFTP_KEY_FILEPATH = getenv("SFTP_KEY_FILEPATH")
+SFTP_PRIVATE_KEY_STRING = getenv("SFTP_PRIVATE_KEY_STRING")
+
+SFTP_PRIVATE_KEY = (
+    RSAKey.from_private_key(StringIO(SFTP_PRIVATE_KEY_STRING))
+    if SFTP_PRIVATE_KEY_STRING
+    else None
+)
 
 # Env vars come through as "null" within the Docker container for some reason
 SFTP_CREDS_PROVIDED = all(
@@ -44,7 +50,7 @@ SFTP_CREDS_PROVIDED = all(
     for v in (
         SFTP_HOSTNAME,
         SFTP_USERNAME,
-        SFTP_KEY_FILEPATH,
+        SFTP_PRIVATE_KEY,
     )
 )
 
@@ -66,7 +72,7 @@ def create_sftp_client() -> SFTPClient:
     ssh.connect(
         hostname=SFTP_HOSTNAME,
         username=SFTP_USERNAME,
-        key_filename=SFTP_KEY_FILEPATH,
+        pkey=SFTP_PRIVATE_KEY,
     )
     sftp_client = ssh.open_sftp()
 
