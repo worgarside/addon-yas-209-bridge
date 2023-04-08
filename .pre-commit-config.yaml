@@ -113,6 +113,7 @@ repos:
           - pydantic
           - types-PyYAML
           - types-python-dateutil
+          - wg-utilities[exceptions,devices.yamaha_yas_209]>=3.0.1
 
   - repo: local
     hooks:

@@ -26,5 +26,6 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "launches": {
     "PythonCurrentFile": "Python: Current File"
-  }
+  },
+  "python.linting.enabled": true
 }

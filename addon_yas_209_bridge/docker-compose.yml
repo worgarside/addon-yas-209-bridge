@@ -1,0 +1,15 @@
+---
+version: '3'
+
+services:
+  run:
+    build:
+      args:
+        - BUILD_FROM=homeassistant/amd64-base:latest
+    env_file:
+      - .env
+    environment:
+      - LISTEN_PORT=50420
+      - SOURCE_PORT=50420
+    ports:
+      - 50420:50420
