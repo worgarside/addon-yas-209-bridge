@@ -55,7 +55,7 @@ jobs:
       - name: Validate `config.yaml` version
         # yamllint disable rule:line-length
         run: |
-          expected_line="version: \"${{ steps.get-tag.outputs.release-tag }}\""
+          expected_line="version: ${{ steps.get-tag.outputs.release-tag }}"
           actual_line=$(grep -E "^version: " yas_209_bridge/config.yaml)
           if [ "$expected_line" != "$actual_line" ]
           then
