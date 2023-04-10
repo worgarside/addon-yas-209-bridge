@@ -12,7 +12,7 @@ python = "^3.10"
 paramiko = "^3.1.0"
 requests = "^2.28.2"
 lxml = "^4.9.2"
-wg-utilities = {version = "3.0.1", extras = ["devices-yamaha-yas-209", "exceptions"]}
+wg-utilities = {version = "*", extras = ["devices-yamaha-yas-209", "exceptions"]}
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
