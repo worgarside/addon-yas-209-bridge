@@ -1297,14 +1297,14 @@ files = [
 
 [[package]]
 name = "wg-utilities"
-version = "3.1.1"
+version = "3.6.0"
 description = "Loads of useful stuff for the things I do :)"
 category = "main"
 optional = false
 python-versions = ">=3.10,<4.0"
 files = [
-    {file = "wg_utilities-3.1.1-py3-none-any.whl", hash = "sha256:7b1671f022b42adf05720d7d1976ed613ced3d8b27a3120a2279db8a2bc97e3e"},
-    {file = "wg_utilities-3.1.1.tar.gz", hash = "sha256:6f62f41ca129d2bd0f0efcfef297c175b8a882dc414615abb4c42515513d5ad8"},
+    {file = "wg_utilities-3.6.0-py3-none-any.whl", hash = "sha256:96bad6ec5a4fac7142f403c3606af9fbdd83492782707e0e08fcaed33db74c61"},
+    {file = "wg_utilities-3.6.0.tar.gz", hash = "sha256:35e713d4cdd1d6c1b59a10e4cb5c0fcce5aed4b56ae2790756e80e863ee229e3"},
 ]
 
 [package.dependencies]
