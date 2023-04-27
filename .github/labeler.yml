@@ -7,15 +7,18 @@ labels:
   - label: bug
     branch: ^bugfix\/
 
+  - label: chore
+    branch: ^chore\/
+
   - label: dependencies
     files:
       - ^poetry\.lock$
       - ^Pipfile\.lock$
-    authors:
-      - dependabot
-      - dependabot[bot]
-      - pre-commit-ci
-      - pre-commit-ci[bot]
+
+  - label: documentation
+    files:
+      - ^docs/.+$
+      - ^.+\.md$
 
   - label: enhancement
     branch: ^feature\/
@@ -29,6 +32,7 @@ labels:
       - ^.+\.py$
 
   - label: release
+    base-branch: ^(main|homeassistant\.local)"
     branch: ^release\/
 
   - label: tests
