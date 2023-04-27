@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "SSH FS - /addons",
+			"uri": "ssh://hasspi-addons/addons"
+		}
+	],
+	"settings": {
+		"launches": {
+			"PythonCurrentFile": "Python: Current File"
+		},
+		"files.associations": {
+			"*.yaml": "home-assistant"
+		}
+	}
+}
