@@ -1,12 +1,12 @@
 ---
 repos:
   - repo: https://github.com/python-poetry/poetry
-    rev: 1.4.0
+    rev: 1.5.0
     hooks:
       - id: poetry-check
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.3.1
+    rev: v3.9.0
     hooks:
       - id: pyupgrade
         args:
@@ -19,7 +19,7 @@ repos:
         language_version: python3.10
 
   - repo: https://github.com/asottile/blacken-docs
-    rev: 1.13.0
+    rev: 1.15.0
     hooks:
       - id: blacken-docs
 
@@ -64,7 +64,7 @@ repos:
 
 
   - repo: https://github.com/jumanjihouse/pre-commit-hook-yamlfmt
-    rev: 0.2.2
+    rev: 0.2.3
     hooks:
       - id: yamlfmt
         args:
@@ -78,7 +78,7 @@ repos:
           - '4096'
 
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.30.0
+    rev: v1.32.0
     hooks:
       - id: yamllint
         args:
@@ -87,14 +87,14 @@ repos:
           - --strict
 
   - repo: https://github.com/hadialqattan/pycln
-    rev: v2.1.3
+    rev: v2.1.5
     hooks:
       - id: pycln
         args:
           - --all
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.1.1
+    rev: v1.4.1
     hooks:
       - id: mypy
         args:
@@ -137,13 +137,13 @@ repos:
       - id: python-use-type-annotations
 
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.4
+    rev: v2.2.5
     hooks:
       - id: codespell
         additional_dependencies:
           - tomli
 
-  - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.260
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.0.277
     hooks:
       - id: ruff

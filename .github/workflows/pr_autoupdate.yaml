@@ -17,5 +17,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_FILTER: labelled
-          PR_LABELS: "keep-updated"
-          MERGE_CONFLICT_ACTION: "ignore"
+          PR_LABELS: keep-updated
+          MERGE_CONFLICT_ACTION: ignore
