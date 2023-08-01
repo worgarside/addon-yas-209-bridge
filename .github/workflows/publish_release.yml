@@ -7,58 +7,20 @@ on:
       - closed
     branches:
       - main
-      - master
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  publish_release_notes:
-    name: Publish Release Notes
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.merged
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    permissions:
-      contents: write
-      deployments: write
-      pages: write
-    steps:
-      - name: Get Release Tag
-        id: get-release-metadata
-        run: |
-          release_tag=$(echo $GITHUB_HEAD_REF | cut -d '/' -f2)
-
-          if ! [[ $release_tag =~ ^[0-9]{1,2}\.[0-9]{1,4}\.[0-9]{1,4}$ ]]
-          then
-              echo "Release tag is invalid: \`$release_tag\`" >> $GITHUB_STEP_SUMMARY
-              exit 1
-          else
-            echo "release-tag=$release_tag" >> $GITHUB_OUTPUT
-            echo "RELEASE_TAG=$release_tag" >> $GITHUB_ENV
-          fi
-
-      - name: Point Release at `${{ github.base_ref }}`
-        run: |
-          gh release edit ${{ steps.get-release-metadata.outputs.release-tag }} \
-           --target ${{ github.base_ref }} \
-           --repo ${{ github.repository }}
-
-      - name: Publish Release Notes
-        run: |
-          gh release edit ${{ steps.get-release-metadata.outputs.release-tag }} \
-            --draft=false \
-            --repo ${{ github.repository }}
-
-      - name: Clone Repository
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.base_ref }}
-          fetch-depth: 0
-
-      - name: Merge Release Branch into `develop`
-        run: |
-          git checkout $GITHUB_HEAD_REF
-          git checkout develop
-          git merge $GITHUB_HEAD_REF --no-edit
-          git push origin develop
-
-      - name: Delete Release Branch
-        run: 'git push origin --delete $GITHUB_HEAD_REF || :'
+  publish-release:
+    name: Publish Release
+    uses: worgarside/github-config-files/.github/workflows/__publish_release.yml@main
+    with:
+      base-ref-name: main
+      head-ref-name: ${{ github.head_ref || github.ref_name }}
+      pr-merged: ${{ github.event.pull_request.merged }}
+      publish-to-pypi: false
+    secrets:
+      gh-token: ${{ secrets.GITHUB_TOKEN}}
+      wg-dev-token: ${{ secrets.WORGARSIDE_DEV_TOKEN}}
