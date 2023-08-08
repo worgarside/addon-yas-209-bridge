@@ -6,13 +6,8 @@ exclude-labels:
   - skip-changelog
   - sync
 categories:
-  - title: ⚠️ Breaking Changes
+  - title: 💥 Breaking Changes
     labels:
-      - breaking
-      - breaking-change
-      - breaking-changes
-      - breaking change
-      - breaking changes
       - major
   - title: 🚀 Features
     labels:
@@ -20,6 +15,7 @@ categories:
       - enhancement
   - title: 🐛 Bug Fixes
     labels:
+      - patch
       - fix
       - bugfix
       - bug
@@ -54,7 +50,9 @@ version-resolver:
 exclude-contributors:
   - '@dependabot'
   - dependabot
+  - app/dependabot
   - dependabot[bot]
   - '@pre-commit-ci'
   - pre-commit-ci
+  - app/pre-commit-ci
   - pre-commit-ci[bot]
