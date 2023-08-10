@@ -949,13 +949,13 @@ files = [
 
 [[package]]
 name = "paramiko"
-version = "3.2.0"
+version = "3.3.1"
 description = "SSH2 protocol library"
 optional = false
 python-versions = ">=3.6"
 files = [
-    {file = "paramiko-3.2.0-py3-none-any.whl", hash = "sha256:df0f9dd8903bc50f2e10580af687f3015bf592a377cd438d2ec9546467a14eb8"},
-    {file = "paramiko-3.2.0.tar.gz", hash = "sha256:93cdce625a8a1dc12204439d45033f3261bdb2c201648cfcdc06f9fd0f94ec29"},
+    {file = "paramiko-3.3.1-py3-none-any.whl", hash = "sha256:b7bc5340a43de4287bbe22fe6de728aa2c22468b2a849615498dd944c2f275eb"},
+    {file = "paramiko-3.3.1.tar.gz", hash = "sha256:6a3777a961ac86dbef375c5f5b8d50014a1a96d0fd7f054a43bc880134b0ff77"},
 ]
 
 [package.dependencies]
@@ -1474,4 +1474,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "823d28b851939689bd5e9aa1d72ec9da465ce8d430dee76272b32a09b95734e2"
+content-hash = "b5fdbdb98f9441b65f19eb9b054ec16aa1dfb8d0d969c44bee2dac6fea0b8afa"
