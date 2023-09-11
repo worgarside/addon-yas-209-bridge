@@ -29,6 +29,5 @@ jobs:
       )
     uses: worgarside/github-config-files/.github/workflows/__create_new_release.yml@main
     with:
-      update-yaml-file-path: yas_209_bridge/config.yaml
-    secrets:
-      gh-token: ${{ secrets.WORGARSIDE_DEV_TOKEN }}
+      update-yaml-file-path: 'yas_209_bridge/config.yaml'
+    secrets: inherit
