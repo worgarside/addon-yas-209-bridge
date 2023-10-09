@@ -107,7 +107,6 @@ repos:
           - types-flask
           - types-setuptools
           - types-tzlocal
-          - pydantic==1.10.7
           - types-PyYAML
           - types-python-dateutil
           - wg-utilities[devices.yamaha_yas_209,exceptions]==3.11.3
