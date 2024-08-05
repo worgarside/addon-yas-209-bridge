@@ -1,4 +1,5 @@
 """Custom addon to listen to the YAS-209 and post updates to HA."""
+
 from __future__ import annotations
 
 from datetime import datetime
@@ -202,15 +203,21 @@ YAS_209 = YamahaYas209(
     on_state_update=on_state_update,
     on_track_update=on_track_update,
     start_listener=True,
-    listen_ip=None
-    if (listen_ip := getenv("LISTEN_IP", "null").lower()) == "null"
-    else listen_ip,
-    listen_port=None
-    if (listen_port := getenv("LISTEN_PORT", "null").lower()) == "null"
-    else int(listen_port),
-    source_port=None
-    if (source_port := getenv("SOURCE_PORT", "null").lower()) == "null"
-    else int(source_port),
+    listen_ip=(
+        None
+        if (listen_ip := getenv("LISTEN_IP", "null").lower()) == "null"
+        else listen_ip
+    ),
+    listen_port=(
+        None
+        if (listen_port := getenv("LISTEN_PORT", "null").lower()) == "null"
+        else int(listen_port)
+    ),
+    source_port=(
+        None
+        if (source_port := getenv("SOURCE_PORT", "null").lower()) == "null"
+        else int(source_port)
+    ),
 )
 
 
