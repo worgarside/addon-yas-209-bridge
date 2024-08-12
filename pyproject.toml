@@ -11,7 +11,7 @@ packages = [{ include = "addon_yas_209_bridge" }]
 python = "^3.10"
 paramiko = "^3.4.0"
 requests = "^2.31.0"
-lxml = "^5.2.2"
+lxml = "^5.3.0"
 wg-utilities = {version = "*", extras = ["devices-yamaha-yas-209", "exceptions"]}
 
 [tool.poetry.group.dev.dependencies]
